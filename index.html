@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" text="text/css" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body class="">
+    <canvas id="myCanvas"></canvas>
+    <div class="BrushSlider">
+        <label id="BrushRangeLabel">Brush Size</label>
+        <span id="BrushRangeValue">50</span>
+        <input type="range" class="brushSlider" value="50" min="0" max="100" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
+    </div>
+    <div class="BtnContainer">
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-check" aria-hidden="true"></i>  
+        </label>
+    </div>
+    <div class="BtnContainer">
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </label>
+    </div>
+    <div class="BtnContainer">
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </label>
+    </div>
+    <div class="DataContainer">
+
+    </div>
+</body>
+</html>
