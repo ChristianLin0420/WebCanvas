@@ -8,53 +8,61 @@
     <link rel="stylesheet" text="text/css" href="index.css">
     <script src="index.js"></script>
 </head>
-<body class="">
+<body>
     <canvas id="myCanvas"></canvas>
+    <div class="content">
+        <label>
+            <label id="fill">Fill</label>
+            <input type="checkbox" onclick="ContentMode()">
+            <span class="check"></span>
+            <label id="empty">Empty</label>
+        </label>
+    </div>
     <div class="BrushSlider">
-        <label id="BrushRangeLabel">Brush Size</label>
+        <label id="BrushRangeLabel">Tools Size</label>
         <span id="BrushRangeValue">50</span>
         <input type="range" class="brushSlider" value="50" min="0" max="100" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
     </div>
     <div class="BtnContainer">
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-check" aria-hidden="true"></i>
+            <i class="fa fa-paint-brush" aria-hidden="true" id="brush"></i>
         </label>
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-square" aria-hidden="true" id="square"></i>
         </label>
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-check" aria-hidden="true"></i>  
-        </label>
-    </div>
-    <div class="BtnContainer">
-        <label>
-            <input type="radio" name="btn">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn">
-            <i class="fa fa-check" aria-hidden="true"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-undo" aria-hidden="true" id="undo"></i>  
         </label>
     </div>
     <div class="BtnContainer">
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-check" aria-hidden="true"></i>
+            <i class="fa fa-eraser" aria-hidden="true" id="eraseer"></i>
         </label>
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-circle" aria-hidden="true" id="circle"></i>
         </label>
         <label>
             <input type="radio" name="btn">
-            <i class="fa fa-check" aria-hidden="true"></i>
+            <i class="fa fa-repeat" aria-hidden="true" id="redo"></i>
+        </label>
+    </div>
+    <div class="BtnContainer">
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-text-height" aria-hidden="true" id="text"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-caret-up" aria-hidden="true" id="triangle"></i>
+        </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-trash" aria-hidden="true" id="reset"></i>
         </label>
     </div>
     <div class="DataContainer">
