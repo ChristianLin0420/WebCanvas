@@ -20,7 +20,7 @@ body{
     position: relative;
     margin: 0;
     display: flex;
-    top: -120px;
+    top: -130px;
     left: 275px;
 }
 .content #fill {
@@ -92,7 +92,7 @@ input[type="checkbox"]:checked ~ .check:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -50px;
+    top: -60px;
     left: 120px;
     width: 300px;
 }
@@ -145,7 +145,7 @@ input[type="checkbox"]:checked ~ .check:after {
 .BtnContainer {
     position: relative;;
     display: grid;
-    top: 120px;
+    top: 150px;
     left: -150px;
     justify-content: center;
     align-items: center;
@@ -157,6 +157,7 @@ input[type="checkbox"]:checked ~ .check:after {
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
+    border: transparent;
 }
 .BtnContainer label .fa {
     position: relative;
@@ -175,6 +176,19 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 .BtnContainer label #triangle {
     font-size: 35px;
+}
+.BtnContainer label #undo, #redo {
+    color: #00f7ff;
+}
+.BtnContainer label #reset {
+    color: #ffd000;
+}
+.BtnContainer label #save, #upload {
+    color: #d400ff;
+}
+.BtnContainer label #rainbow {
+    color: transparent;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
 }
 .BtnContainer label .fa:hover {
     box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
@@ -195,6 +209,7 @@ canvas {
     height: 600px;
     margin: 5% auto;
     margin-left: 150px;
+    margin-right: -100px;
     border: 2px solid #000000;
     border-radius: 5%;
     background-color: rgb(231, 242, 252);

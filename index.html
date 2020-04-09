@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" text="text/css" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -25,48 +26,56 @@
     </div>
     <div class="BtnContainer">
         <label>
-            <input type="radio" name="btn">
+            <input type="radio" name="btn" onclick="startBrush()">
             <i class="fa fa-paint-brush" aria-hidden="true" id="brush"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="radio" name="btn" onclick="startRectangle()">
             <i class="fa fa-square" aria-hidden="true" id="square"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="button" name="btn">
             <i class="fa fa-undo" aria-hidden="true" id="undo"></i>  
+        </label>
+        <label>
+            <input type="button" name="btn">
+            <i class="fa fa-download" aria-hidden="true" id="save"></i>  
         </label>
     </div>
     <div class="BtnContainer">
         <label>
-            <input type="radio" name="btn">
-            <i class="fa fa-eraser" aria-hidden="true" id="eraseer"></i>
+            <input type="radio" name="btn" onclick="startEraser()">
+            <i class="fa fa-eraser" aria-hidden="true" id="eraser"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="radio" name="btn" onclick="startCircle()">
             <i class="fa fa-circle" aria-hidden="true" id="circle"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="button" name="btn">
             <i class="fa fa-repeat" aria-hidden="true" id="redo"></i>
+        </label>
+        <label>
+            <input type="button" name="btn">
+            <i class="fa fa-upload" aria-hidden="true" id="upload"></i>
         </label>
     </div>
     <div class="BtnContainer">
         <label>
-            <input type="radio" name="btn">
+            <input type="radio" name="btn" onclick="startWriteText()">
             <i class="fa fa-text-height" aria-hidden="true" id="text"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="radio" name="btn" onclick="startTriangle()">
             <i class="fa fa-caret-up" aria-hidden="true" id="triangle"></i>
         </label>
         <label>
-            <input type="radio" name="btn">
+            <input type="button" name="btn">
             <i class="fa fa-trash" aria-hidden="true" id="reset"></i>
         </label>
+        <label>
+            <input type="radio" name="btn">
+            <i class="fa fa-trash" aria-hidden="true" id="rainbow"></i>
+        </label>
     </div>
-    <div class="DataContainer">
-
-    </div>
-</body>
 </html>
