@@ -21,8 +21,8 @@
     </div>
     <div class="BrushSlider">
         <label id="BrushRangeLabel">Tools Size</label>
-        <span id="BrushRangeValue">50</span>
-        <input type="range" class="brushSlider" value="50" min="0" max="100" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
+        <span id="BrushRangeValue">20</span>
+        <input type="range" class="brushSlider" value="20" min="0" max="100" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
     </div>
     <div class="BtnContainer">
         <label>
@@ -35,7 +35,7 @@
         </label>
         <label>
             <input type="button" name="btn">
-            <i class="fa fa-undo" aria-hidden="true" id="undo"></i>  
+            <i class="fa fa-undo" aria-hidden="true" id="undo" onclick="undo()"></i>  
         </label>
         <label>
             <input type="button" name="btn">
@@ -53,7 +53,7 @@
         </label>
         <label>
             <input type="button" name="btn">
-            <i class="fa fa-repeat" aria-hidden="true" id="redo"></i>
+            <i class="fa fa-repeat" aria-hidden="true" id="redo" onclick="redo()"></i>
         </label>
         <label>
             <input type="button" name="btn">
@@ -71,7 +71,7 @@
         </label>
         <label>
             <input type="button" name="btn">
-            <i class="fa fa-trash" aria-hidden="true" id="reset"></i>
+            <i class="fa fa-trash" aria-hidden="true" id="reset" onclick="cleanCanvas()"></i>
         </label>
         <label>
             <input type="radio" name="btn">
