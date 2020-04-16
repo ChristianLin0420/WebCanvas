@@ -195,8 +195,3 @@ function save(e) {
 ### Gitlab page link
 [MyCanvas](https://107062240.gitlab.io/AS_01_WebCanvas)
 
-<style>
-table th{
-    width: 100%;
-}
-</style>
