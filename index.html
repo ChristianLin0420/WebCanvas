@@ -1,81 +1,91 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" text="text/css" href="index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-</head>
-<body>
-    <canvas id="myCanvas"></canvas>
-    <div class="content">
-        <label>
-            <label id="fill">Fill</label>
-            <input type="checkbox" onclick="ContentMode()">
-            <span class="check"></span>
-            <label id="empty">Empty</label>
-        </label>
-    </div>
-    <div class="BrushSlider">
-        <label id="BrushRangeLabel">Tools Size</label>
-        <span id="BrushRangeValue">20</span>
-        <input type="range" class="brushSlider" value="20" min="0" max="100" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
-    </div>
-    <div class="BtnContainer">
-        <label>
-            <input type="radio" name="btn" onclick="startBrush()">
-            <i class="fa fa-paint-brush" aria-hidden="true" id="brush"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn" onclick="startRectangle()">
-            <i class="fa fa-square" aria-hidden="true" id="square"></i>
-        </label>
-        <label>
-            <input type="button" name="btn">
-            <i class="fa fa-undo" aria-hidden="true" id="undo" onclick="undo()"></i>  
-        </label>
-        <label>
-            <input type="button" name="btn">
-            <i class="fa fa-download" aria-hidden="true" id="save"></i>  
-        </label>
-    </div>
-    <div class="BtnContainer">
-        <label>
-            <input type="radio" name="btn" onclick="startEraser()">
-            <i class="fa fa-eraser" aria-hidden="true" id="eraser"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn" onclick="startCircle()">
-            <i class="fa fa-circle" aria-hidden="true" id="circle"></i>
-        </label>
-        <label>
-            <input type="button" name="btn">
-            <i class="fa fa-repeat" aria-hidden="true" id="redo" onclick="redo()"></i>
-        </label>
-        <label>
-            <input type="button" name="btn">
-            <i class="fa fa-upload" aria-hidden="true" id="upload"></i>
-        </label>
-    </div>
-    <div class="BtnContainer">
-        <label>
-            <input type="radio" name="btn" onclick="startWriteText()">
-            <i class="fa fa-text-height" aria-hidden="true" id="text"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn" onclick="startTriangle()">
-            <i class="fa fa-caret-up" aria-hidden="true" id="triangle"></i>
-        </label>
-        <label>
-            <input type="button" name="btn">
-            <i class="fa fa-trash" aria-hidden="true" id="reset" onclick="cleanCanvas()"></i>
-        </label>
-        <label>
-            <input type="radio" name="btn">
-            <i class="fa fa-trash" aria-hidden="true" id="rainbow"></i>
-        </label>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WebCanvas</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" text="text/css" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <canvas id="myCanvas"></canvas>
+
+        <section>
+            <div id="rgbValue"></div>
+            <div id="rgbPicker"></div>
+        </section>
+        
+        <div class="content">
+            <label>
+                <label id="fill">Fill</label>
+                <input type="checkbox" onclick="ContentMode()">
+                <span class="check"></span>
+                <label id="empty">Empty</label>
+            </label>
+        </div>
+        <div class="BrushSlider">
+            <label id="BrushRangeLabel">Tools Size</label>
+            <span id="BrushRangeValue">10</span>
+            <input type="range" class="brushSlider" value="10" min="1" max="50" class="Width" onmousemove="widthControl(this.value)" onchange="widthControl(this.value)">
+        </div>
+        <div class="BtnContainer">
+            <label>
+                <input type="radio" name="btn" onclick="startBrush()" src='image/brush.png'>
+                <i class="fa fa-paint-brush" aria-hidden="true" id="brush"></i>
+            </label>
+            <label>
+                <input type="radio" name="btn" onclick="startRectangle()">
+                <i class="fa fa-square" aria-hidden="true" id="square"></i>
+            </label>
+            <label>
+                <input type="button" name="btn">
+                <i class="fa fa-undo" aria-hidden="true" id="undo"></i>  
+            </label>
+        </div>
+        <div class="BtnContainer">
+            <label>
+                <input type="radio" name="btn" onclick="startEraser()">
+                <i class="fa fa-eraser" aria-hidden="true" id="eraser"></i>
+            </label>
+            <label>
+                <input type="radio" name="btn" onclick="startCircle()">
+                <i class="fa fa-circle" aria-hidden="true" id="circle"></i>
+            </label>
+            <label>
+                <input type="button" name="btn">
+                <i class="fa fa-repeat" aria-hidden="true" id="redo"></i>
+            </label>
+        </div>
+        <div class="BtnContainer">
+            <label>
+                <input type="radio" name="btn" onclick="startWriteText()">
+                <i class="fa fa-text-height" aria-hidden="true" id="text"></i>
+            </label>
+            <label>
+                <input type="radio" name="btn" onclick="startTriangle()">
+                <i class="fa fa-caret-up" aria-hidden="true" id="triangle"></i>
+            </label>
+            <label>
+                <input type="button" name="btn">
+                <i class="fa fa-trash" aria-hidden="true" id="clean"></i>
+            </label>
+        </div>
+        <div class="DataContainer">
+            <label>
+                <input type="radio" name="btn">
+                <i class="fa fa-trash" aria-hidden="true" id="rainbow" onclick="startRainbow()"></i>
+            </label>
+            <label>
+                <input type="button" name="btn">
+                <a class="fa fa-download" aria-hidden="true" onclick="save(this)" download="myImage.jpg" href="" id="save"></a>  
+            </label>
+            <label>
+                <input type="file" name="btn"  accept="image/*" type="file" style="visibility:hidden" id="uploadIMG">
+                <i class="fa fa-upload" aria-hidden="true" id="upload"></i>
+            </label>
+        </div>
+        <script data-main="index.js" src="jsFiles/require.js"></script>
+    </body>
 </html>

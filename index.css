@@ -20,8 +20,8 @@ body{
     position: relative;
     margin: 0;
     display: flex;
-    top: -130px;
-    left: 275px;
+    top: -70px;
+    left: 480px;
 }
 .content #fill {
     position: absolute;
@@ -92,8 +92,8 @@ input[type="checkbox"]:checked ~ .check:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -60px;
-    left: 120px;
+    top: 0px;
+    left: 320px;
     width: 300px;
 }
 #BrushRangeLabel {
@@ -146,7 +146,7 @@ input[type="checkbox"]:checked ~ .check:after {
     position: relative;;
     display: grid;
     top: 150px;
-    left: -150px;
+    left: 50px;
     justify-content: center;
     align-items: center;
 }
@@ -161,10 +161,10 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 .BtnContainer label .fa {
     position: relative;
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     background: #181818;
-    line-height: 75px;
+    line-height: 65px;
     text-align: center;
     margin: 0px 10px;
     color: #6f6f6f;
@@ -180,15 +180,8 @@ input[type="checkbox"]:checked ~ .check:after {
 .BtnContainer label #undo, #redo {
     color: #00f7ff;
 }
-.BtnContainer label #reset {
+.BtnContainer label #clean {
     color: #ffd000;
-}
-.BtnContainer label #save, #upload {
-    color: #d400ff;
-}
-.BtnContainer label #rainbow {
-    color: transparent;
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
 }
 .BtnContainer label .fa:hover {
     box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
@@ -204,13 +197,245 @@ input[type="checkbox"]:checked ~ .check:after {
                  0 0 20px #00fff1;
 }
 
+.DataContainer {
+    position: relative;;
+    display: grid;
+    top: 150px;
+    left: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.DataContainer label {
+    position: relative;
+}
+.DataContainer label input {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: transparent;
+}
+.DataContainer label .fa {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    background: #181818;
+    line-height: 65px;
+    text-align: center;
+    margin: 0px 10px;
+    color: #6f6f6f;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.DataContainer label #save, #upload {
+    top: 25px;
+    color: #d400ff;
+}
+.DataContainer label #rainbow {
+    color: transparent;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+}
+.DataContainer label .fa:hover {
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.8),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+                inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.DataContainer label input:checked ~ .fa {
+    color: #00ff11;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 5px #00fff1,
+                 0 0 20px #00fff1;
+}
+
 canvas {
     width: 800px;
     height: 600px;
     margin: 5% auto;
     margin-left: 150px;
-    margin-right: -100px;
+    margin-right: -300px;
     border: 2px solid #000000;
     border-radius: 5%;
     background-color: #e7f2fc;
+}
+
+section {
+    display: block;
+    padding: 15px 20px;
+    font-size: 15px;
+    background: transparent;
+    -webkit-border-radius: 0 0 8px 8px;
+    -moz-border-radius: 0 0 8px 8px;
+    -ms-border-radius: 0 0 8px 8px;
+    -o-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+    position: absolute;
+    top: 15px;
+    right: 70px;
+}
+
+.container {
+    overflow: auto;
+}
+
+#rgbValue {
+    float: left;
+    color: white;
+}
+
+.colorPicker {
+    background: transparent;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    margin: 1em;
+    width: 300px;
+    display: inline-block;
+}
+
+.colorPicker .extras {
+    float: right;
+    margin: 0.5em;
+}
+
+.colorPicker .extras .currentColorContainer {
+    overflow: hidden;
+}
+
+.colorPicker .extras .currentColor {
+    float: right;
+    width: 65px;
+    height: 30px;
+    border: 1px solid #000000;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+}
+
+.colorPicker .extras .colorFields {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.colorPicker .extras .color {
+    text-align: right;
+}
+
+.colorPicker .extras .colorFields input {
+    width: 40px;
+    margin-left: 0.5em;
+}
+
+.colorPicker .extras .hex {
+    float: right;
+}
+
+.colorPicker .extras .hex input {
+    width: 60px;
+}
+
+.colorPicker .twod {
+    float: left;
+    margin: 0.5em;
+}
+
+/* main dimensions */
+.colorPicker .twod, .colorPicker .twod .bg {
+    width: 240px;
+    height: 240px;
+}
+.colorPicker .oned, .colorPicker .oned .bg {
+    height: 240px;
+}
+.colorPicker .oned, .colorPicker .oned .bg, .colorPicker .oned .pointer .shape {
+    width: 20px;
+}
+
+.colorPicker .twod .bg {
+    position: absolute;
+    /* These seem to cause issues in some browsers, careful!
+    border: 1px solid #BBB;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    */
+}
+.colorPicker .twod .pointer {
+    position: relative;
+    z-index: 2;
+    width: 8px;
+}
+.colorPicker .twod .pointer .shape {
+    position: absolute;
+}
+.colorPicker .twod .pointer .shape1 {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.colorPicker .twod .pointer .shape2 {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.colorPicker .oned {
+    float: left;
+    margin: 0.5em;
+}
+
+.colorPicker .oned .bg {
+    border: 1px solid rgb(255, 255, 255);
+    /*
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    */
+}
+.colorPicker .oned .pointer {
+    position: relative;
+    z-index: 2;
+}
+.colorPicker .oned .pointer .shape {
+    position: absolute;
+    margin-left: -1px;
+    margin-top: -4px;
+    height: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/* gradients, tweak as needed based on which browsers you want to support */
+.colorPicker .oned .bg {
+    background: -moz-linear-gradient(top,  #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 66%, #ff00ff 83%, #ff0000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0000), color-stop(17%,#ffff00), color-stop(33%,#00ff00), color-stop(50%,#00ffff), color-stop(66%,#0000ff), color-stop(83%,#ff00ff), color-stop(100%,#ff0000));
+    background: -webkit-linear-gradient(top,  #ff0000 0%,#ffff00 17%,#00ff00 33%,#00ffff 50%,#0000ff 66%,#ff00ff 83%,#ff0000 100%);
+    background: -o-linear-gradient(top,  #ff0000 0%,#ffff00 17%,#00ff00 33%,#00ffff 50%,#0000ff 66%,#ff00ff 83%,#ff0000 100%);
+    background: linear-gradient(to bottom,  #ff0000 0%,#ffff00 17%,#00ff00 33%,#00ffff 50%,#0000ff 66%,#ff00ff 83%,#ff0000 100%);
+}
+
+.colorPicker .twod .bg1 {
+    z-index: 0;
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+.colorPicker .twod .bg2 {
+    z-index: 1;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
 }
